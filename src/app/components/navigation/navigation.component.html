@@ -1,0 +1,23 @@
+<nav
+  class="bg-beige fixed left-0 top-0 h-full w-full lg:relative lg:h-auto lg:bg-transparent"
+>
+  <div class="mt-20 lg:mt-0">
+    <a href="/">
+      <app-logo-vertical class="lg:hidden"></app-logo-vertical>
+    </a>
+    <ul
+      class="mt-8 flex flex-col items-center gap-y-4 lg:mt-0 lg:flex-row lg:gap-x-6 lg:gap-y-0"
+    >
+      @for (route of navRoutes; track route.path) {
+        <li>
+          <a
+            routerLink="{{ route.path }}"
+            class="text-md inline-block font-serif uppercase"
+          >
+            {{ route.title }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</nav>
